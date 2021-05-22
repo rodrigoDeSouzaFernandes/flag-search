@@ -25,15 +25,17 @@ function Main() {
     <main>
       <div className="flag-page">
         <Filter />
-        {
-          allCountries.map((country, index) => {
-            if (index < actualPage * pageLimit
+        <div className="flags">
+          {
+            allCountries.map((country, index) => {
+              if (index < actualPage * pageLimit
             && index >= actualPage * pageLimit - pageLimit) {
-              return <ImageCard country={ country } />;
-            }
-            return '';
-          })
-        }
+                return <ImageCard country={ country } />;
+              }
+              return '';
+            })
+          }
+        </div>
       </div>
       <PageNav currentPage={ actualPage } setCurrentPage={ setActualPage } />
     </main>

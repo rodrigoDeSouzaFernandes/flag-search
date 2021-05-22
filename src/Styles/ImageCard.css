@@ -1,5 +1,6 @@
 .image-card {
   height: 181px;
+  margin: auto;
   width: 316px;
 }
 
@@ -8,5 +9,4 @@
   .image-card {
     margin: 10px 0;
   }
-
 }
