@@ -19,3 +19,12 @@
   height: 28px;
   width: 28px;
 }
+
+.btn-page:hover {
+  filter: brightness(1.1);
+}
+
+.btn-page.selected {
+  background-color: #6D2080;
+  color: white;
+}
