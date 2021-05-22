@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import flagContext from './flagContext';
 
 function Provider({ children }) {
+  const [allCountries, setAllCountries] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
+
   const context = {
-    algo: 'oi',
+    allCountries,
+    setAllCountries,
+    isFetching,
+    setIsFetching,
   };
 
   return (
