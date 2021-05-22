@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
+import leftArrow from '../../img/pag-vector-left.png';
+import rightArrow from '../../img/pag-vector-right.png';
+
 import '../../Styles/PageNav.css';
 
 const initialPages = {
@@ -32,7 +35,7 @@ function PageNav({ currentPage }) {
   return (
     <div className="btn-container">
       <button type="button" className="btn-page left">
-        left arrow
+        <img src={ leftArrow } alt="" />
       </button>
       {
         buttons.map((elem, index) => (
@@ -46,7 +49,7 @@ function PageNav({ currentPage }) {
         ))
       }
       <button type="button" className="btn-page right">
-        rigth arrow
+        <img src={ rightArrow } alt="" />
       </button>
     </div>
   );
