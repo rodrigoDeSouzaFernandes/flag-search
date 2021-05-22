@@ -1,0 +1,12 @@
+.image-card {
+  height: 181px;
+  width: 316px;
+}
+
+@media ( max-width : 1060px ) {
+
+  .image-card {
+    margin: 10px 0;
+  }
+
+}
