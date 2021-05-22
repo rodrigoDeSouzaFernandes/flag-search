@@ -8,12 +8,13 @@ import ImageCard from './ImageCards';
 import PageNav from './PageNav';
 
 import '../../Styles/Main.css';
+import Filter from './Filter';
 
 const limitItens = 3;
 
 function Main() {
-  const [actualPage] = useState(1);
   const [pageLimit] = useState(limitItens);
+  const [actualPage, setActualPage] = useState(1);
   const { allCountries, setAllCountries } = useContext(flagContext);
 
   useEffect(() => {
@@ -23,6 +24,7 @@ function Main() {
   return (
     <main>
       <div className="flag-page">
+        <Filter />
         {
           allCountries.map((country, index) => {
             if (index < actualPage * pageLimit
@@ -33,8 +35,9 @@ function Main() {
           })
         }
       </div>
-      <PageNav currentPage={ actualPage } />
+      <PageNav currentPage={ actualPage } setCurrentPage={ setActualPage } />
     </main>
+
   );
 }
 

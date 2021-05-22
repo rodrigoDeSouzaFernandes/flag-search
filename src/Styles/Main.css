@@ -1,8 +1,9 @@
 .flag-page {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin: 48px 176px 0;
+  margin: 100px 176px 0;
 }
 
 @media ( max-width : 1200px ) {
@@ -19,5 +20,4 @@
     flex-direction: column;
     margin: 145px 0 0;
   }
-
 }

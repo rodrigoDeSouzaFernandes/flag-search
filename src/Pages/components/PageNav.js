@@ -14,7 +14,7 @@ const initialPages = {
   five: 5,
 };
 
-function PageNav({ currentPage }) {
+function PageNav({ currentPage, setCurrentPage }) {
   const [buttons, setButtons] = useState([]);
 
   const makeButtons = () => {
@@ -28,9 +28,14 @@ function PageNav({ currentPage }) {
     }
   };
 
+  const handleClick = ({ target }) => {
+    const page = Number(target.name);
+    setCurrentPage(page);
+  };
+
   useEffect(() => {
     makeButtons();
-  }, []);
+  }, [currentPage]);
 
   return (
     <div className="btn-container">
@@ -40,9 +45,12 @@ function PageNav({ currentPage }) {
       {
         buttons.map((elem, index) => (
           <button
+            name={ elem }
             key={ index }
-            className="btn-page"
+            className={ `btn-page ${Number(elem) === currentPage}` }
             type="button"
+            disabled={ Number(elem) === currentPage }
+            onClick={ handleClick }
           >
             {elem}
           </button>
@@ -57,6 +65,7 @@ function PageNav({ currentPage }) {
 
 PageNav.propTypes = {
   currentPage: PropTypes.number.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
 };
 
 export default PageNav;
