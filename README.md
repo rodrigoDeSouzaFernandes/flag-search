@@ -22,4 +22,4 @@ Pesquisar por uma região(https://restcountries.eu/rest/v2/region/{region}) list
  ---
  
 ## Sobre as telas:
-https://www.figma.com/file/Dej8zw0w0WiRid4moOmNuV/Prova-Incluir-Tecnologia---Frontend?node-id=0%3A1&viewport=321%2C379%2C0.07089027017354965
+https://www.figma.com/file/Dej8zw0w0WiRid4moOmNuV/Prova-Incluir-Tecnologia---Frontend?node-id=0%3A1&viewport=321%2C379%2C0.07089027017354965 ;
