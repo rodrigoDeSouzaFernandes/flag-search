@@ -36,7 +36,12 @@ function Main() {
           }
         </div>
       </div>
-      <PageNav currentPage={ actualPage } setCurrentPage={ setActualPage } />
+      <PageNav
+        currentPage={ actualPage }
+        setCurrentPage={ setActualPage }
+        length={ allCountries.length }
+        pageLimit={ pageLimit }
+      />
     </main>
 
   );
