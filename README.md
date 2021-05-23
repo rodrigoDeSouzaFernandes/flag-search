@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Teste Mova Front end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A atividade proposta é de criar um projeto integrado com a api (https://restcountries.eu/#api-endpoints-code) que lista países.
 
-## Available Scripts
+## Funcionalidades:
+Selecionar um tipo de filtro: Região, Capital, Lingua, País, Código de ligação. Default País. Esse select define as propriedades do segundo select e a url da requisição.  
 
-In the project directory, you can run:
+Pesquisar por uma região(https://restcountries.eu/rest/v2/region/{region}) listar na tela as bandeiras(campo flag) de todos os países dessa região. Paginar de 10 em 10  
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+	* Pesquisar pela lingua( https://restcountries.eu/rest/v2/lang/{et} ) exibir as bandeiras de todos os países com essa lingua. Paginar de 10 em 10
+	* Pesquisar por um país, exibir apenas a bandeira desse país(https://restcountries.eu/rest/v2/alpha/{currency})
+	* Pesquisar pelo código de ligação( https://restcountries.eu/rest/v2/region/{region} )
+  * Ao clicar na bandeira abre uma nova página(Tela 2) com mais informações do país( https://restcountries.eu/rest/v2/alpha/{currency} ):
+      1. imagem da bandeira(flag)
+      2. name
+      3. capital
+      4. region -> Ao clicar na região o usuário deve ser redirecionado para a tela 1 com essa região selecionada
+      5. subregion
+      6. population
+      7. languages.nativeName
+      8. Lista com as bandeiras dos vizinhos(borders). Essas bandeiras são clicáveis e leva para uma nova página com detalhes do país clicado.
+   
+ ---
+ 
+## Sobre as telas:
+https://www.figma.com/file/Dej8zw0w0WiRid4moOmNuV/Prova-Incluir-Tecnologia---Frontend?node-id=0%3A1&viewport=321%2C379%2C0.07089027017354965
