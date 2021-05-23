@@ -38,7 +38,12 @@ function PageNav({ currentPage, setCurrentPage, length, pageLimit }) {
 
   return (
     <div className="btn-container">
-      <button type="button" className="btn-page left">
+      <button
+        type="button"
+        className="btn-page left"
+        disabled={ currentPage === 1 }
+        onClick={ () => setCurrentPage(currentPage - 1) }
+      >
         <img src={ leftArrow } alt="" />
       </button>
       {
@@ -55,7 +60,12 @@ function PageNav({ currentPage, setCurrentPage, length, pageLimit }) {
           </button>
         ))
       }
-      <button type="button" className="btn-page right">
+      <button
+        type="button"
+        className="btn-page right"
+        disabled={ currentPage === Math.ceil(length / pageLimit) }
+        onClick={ () => setCurrentPage(currentPage + 1) }
+      >
         <img src={ rightArrow } alt="" />
       </button>
     </div>
