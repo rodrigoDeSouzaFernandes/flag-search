@@ -19,7 +19,6 @@ export const requestRegion = (region, setState, pageLimit) => {
 };
 
 export const requestLanguage = (lang, setState, pageLimit) => {
-  console.log(lang);
   fetch(`https://restcountries.eu/rest/v2/lang/${lang}`)
     .then((response) => response.json())
     .then(setState)

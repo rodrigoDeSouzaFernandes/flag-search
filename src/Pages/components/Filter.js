@@ -25,7 +25,6 @@ function Filter() {
   };
 
   const chooseFilter = () => {
-    console.log(subFilter.length);
     if (selectFilter === 'none') return setSubfilter([]);
     if (selectFilter === 'Região') return setSubfilter(regions);
     if (selectFilter === 'Capital') return getCapitals(setSubfilter);
