@@ -41,7 +41,7 @@ function Details({ match: { params: { name } } }) {
                     .map((c, index) => {
                       if (index < actualPage * pageLimit
                       && index >= actualPage * pageLimit - pageLimit) {
-                        return <ImageCard key={ c } country={ c } />;
+                        return <ImageCard key={ index } country={ c } />;
                       }
                       return '';
                     })
