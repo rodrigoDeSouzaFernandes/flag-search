@@ -1,6 +1,7 @@
 .image-card {
+  box-shadow: 1px 1px 5px grey;
   height: 181px;
-  margin: auto;
+  margin: 10px auto;
   width: 316px;
 }
 

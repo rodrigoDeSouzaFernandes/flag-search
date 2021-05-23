@@ -5,14 +5,16 @@ import flagContext from '../../Context/flagContext';
 import { getCapitals, getLanguages,
   getCountry, getCallingCodes, regions } from '../../Services/api-request';
 
-import { requestCapital, requestRegion } from '../../Services/filter-request';
+import { requestCapital, requestRegion,
+  requestLanguage, requestCountry,
+  requestCallingCode } from '../../Services/filter-request';
 
 import '../../Styles/Filter.css';
 
 function Filter() {
   const filterOptions = ['Região', 'Capital', 'Língua', 'País', 'Código de ligação'];
 
-  const { setAllCountries } = useContext(flagContext);
+  const { setAllCountries, setPageLimit } = useContext(flagContext);
 
   const [subFilter, setSubfilter] = useState([]);
   const [selectFilter, setSelectFilter] = useState('none');
@@ -36,8 +38,17 @@ function Filter() {
     if (selectFilter === 'none' || actualFilter === 'none') {
       return alert('Você precisa selecionar um filtro');
     }
-    if (selectFilter === 'Região') return requestRegion(actualFilter, setAllCountries);
+    if (selectFilter === 'Região') {
+      return requestRegion(actualFilter, setAllCountries, setPageLimit);
+    }
     if (selectFilter === 'Capital') return requestCapital(actualFilter, setAllCountries);
+    if (selectFilter === 'Língua') {
+      return requestLanguage(actualFilter, setAllCountries, setPageLimit);
+    }
+    if (selectFilter === 'País') return requestCountry(actualFilter, setAllCountries);
+    if (selectFilter === 'Código de ligação') {
+      return requestCallingCode(actualFilter, setAllCountries);
+    }
   };
 
   useEffect(() => {
@@ -74,13 +85,13 @@ function Filter() {
                 </option>
                 {
                   subFilter.map((elem, i) => {
-                    if (elem !== '') {
+                    if (elem.name !== '') {
                       return (
                         <option
                           key={ `${elem} ${i}` }
-                          value={ elem }
+                          value={ elem.value }
                         >
-                          {elem}
+                          {elem.name}
                         </option>
                       );
                     }

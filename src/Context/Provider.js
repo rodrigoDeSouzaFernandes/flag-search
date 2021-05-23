@@ -2,15 +2,20 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import flagContext from './flagContext';
 
+const limitItens = 3;
+
 function Provider({ children }) {
   const [allCountries, setAllCountries] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
+  const [pageLimit, setPageLimit] = useState(limitItens);
 
   const context = {
     allCountries,
     setAllCountries,
     isFetching,
     setIsFetching,
+    pageLimit,
+    setPageLimit,
   };
 
   return (

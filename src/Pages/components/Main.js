@@ -10,12 +10,9 @@ import PageNav from './PageNav';
 import '../../Styles/Main.css';
 import Filter from './Filter';
 
-const limitItens = 3;
-
 function Main() {
-  const [pageLimit] = useState(limitItens);
   const [actualPage, setActualPage] = useState(1);
-  const { allCountries, setAllCountries } = useContext(flagContext);
+  const { allCountries, setAllCountries, pageLimit } = useContext(flagContext);
 
   useEffect(() => {
     getAllCountries(setAllCountries);

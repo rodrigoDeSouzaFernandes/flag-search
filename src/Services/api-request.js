@@ -5,12 +5,19 @@ export const getAllCountries = (setState) => {
     .catch(alert);
 };
 
-export const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+export const regions = [
+  { name: 'Africa', value: 'Africa' },
+  { name: 'Americas', value: 'Americas' },
+  { name: 'Europe', value: 'Europe' },
+  { name: 'Asia', value: 'Asia' },
+  { name: 'Oceania', value: 'Oceania' },
+];
 
 export const getCapitals = (setState) => {
   fetch('https://restcountries.eu/rest/v2/all?fields=capital;')
     .then((response) => response.json())
     .then((data) => data.map((elem) => elem.capital).sort())
+    .then((data) => data.map((elem) => ({ name: elem, value: elem })))
     .then(setState);
 };
 
@@ -22,8 +29,8 @@ export const getLanguages = (setState) => {
       const languageArray = [];
       data.forEach((elem) => {
         elem.forEach((lang) => {
-          if (!languageArray.some((e) => e === lang.name)) {
-            languageArray.push(lang.name);
+          if (!languageArray.some((e) => e === lang)) {
+            languageArray.push({ name: lang.name, value: lang.iso639_1 });
           }
         });
       });
@@ -35,7 +42,7 @@ export const getLanguages = (setState) => {
 export const getCountry = (setState) => {
   fetch('https://restcountries.eu/rest/v2/all?fields=name')
     .then((response) => response.json())
-    .then((data) => data.map((elem) => elem.name))
+    .then((data) => data.map((elem) => ({ name: elem.name, value: elem.name })))
     .then(setState);
 };
 
@@ -47,16 +54,16 @@ export const getCallingCodes = (setState) => {
       const callingCodesArray = [];
       data.forEach((elem) => {
         elem.forEach((code) => {
-          if (!callingCodesArray.some((e) => e === Number(code))) {
-            callingCodesArray.push(Number(code));
+          if (!callingCodesArray.some((e) => e.name === Number(code))) {
+            callingCodesArray.push({ name: Number(code), value: Number(code) });
           }
         });
       });
 
       return callingCodesArray.filter(
-        (elem) => !Number.isNaN(elem),
+        (elem) => !Number.isNaN(elem.name),
       )
-        .sort((a, b) => a - b);
+        .sort((a, b) => a.name - b.name);
     })
     .then(setState);
 };
