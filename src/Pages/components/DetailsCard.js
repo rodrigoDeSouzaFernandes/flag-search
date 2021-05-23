@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
 import '../../Styles/DetailsCard.css';
+import flagContext from '../../Context/flagContext';
+import { requestRegion } from '../../Services/filter-request';
 
 function DetailsCard({ country }) {
+  const { setActualPath, setAllCountries, setPageLimit } = useContext(flagContext);
   const { flag, name, population, region, subregion, capital, languages } = country;
   return (
     <div className="details-card">
@@ -16,7 +19,13 @@ function DetailsCard({ country }) {
         <p>
           Região:
           {' '}
-          <Link to="/">
+          <Link
+            to="/"
+            onClick={ () => {
+              setActualPath('details');
+              requestRegion(region, setAllCountries, setPageLimit);
+            } }
+          >
             {region}
           </Link>
 

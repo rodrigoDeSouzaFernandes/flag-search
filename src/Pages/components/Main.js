@@ -12,10 +12,12 @@ import Filter from './Filter';
 
 function Main() {
   const { allCountries, setAllCountries, pageLimit,
-    actualPage, setActualPage } = useContext(flagContext);
+    actualPage, setActualPage, actualPath } = useContext(flagContext);
 
   useEffect(() => {
-    getAllCountries(setAllCountries);
+    if (actualPath !== 'details') {
+      getAllCountries(setAllCountries);
+    }
   }, []);
 
   return (
