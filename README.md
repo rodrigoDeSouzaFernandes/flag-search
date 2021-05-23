@@ -6,10 +6,9 @@ A atividade proposta é de criar um projeto integrado com a api (https://restcou
 Selecionar um tipo de filtro: Região, Capital, Lingua, País, Código de ligação. Default País. Esse select define as propriedades do segundo select e a url da requisição.  
 
 Pesquisar por uma região(https://restcountries.eu/rest/v2/region/{region}) listar na tela as bandeiras(campo flag) de todos os países dessa região. Paginar de 10 em 10  
-
-	* Pesquisar pela lingua( https://restcountries.eu/rest/v2/lang/{et} ) exibir as bandeiras de todos os países com essa lingua. Paginar de 10 em 10
-	* Pesquisar por um país, exibir apenas a bandeira desse país(https://restcountries.eu/rest/v2/alpha/{currency})
-	* Pesquisar pelo código de ligação( https://restcountries.eu/rest/v2/region/{region} )
+  * Pesquisar pela lingua( https://restcountries.eu/rest/v2/lang/{et} ) exibir as bandeiras de todos os países com essa lingua. Paginar de 10 em 10		
+  * Pesquisar por um país, exibir apenas a bandeira desse país(https://restcountries.eu/rest/v2/alpha/{currency})		
+  * Pesquisar pelo código de ligação( https://restcountries.eu/rest/v2/region/{region} )
   * Ao clicar na bandeira abre uma nova página(Tela 2) com mais informações do país( https://restcountries.eu/rest/v2/alpha/{currency} ):
       1. imagem da bandeira(flag)
       2. name
