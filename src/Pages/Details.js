@@ -22,7 +22,7 @@ function Details({ match: { params: { name } } }) {
     setActualPage(1);
     setPageLimit(itensPerPage);
     getCountryDetails(name, setCountry, setPossibleBorders);
-  }, []);
+  }, [name]);
 
   return (
     <div>

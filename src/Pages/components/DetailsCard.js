@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
@@ -12,7 +13,14 @@ function DetailsCard({ country }) {
       <div className="info">
         <p>{`Nome: ${name}`}</p>
         <p>{`Capital: ${capital}`}</p>
-        <p>{`Região: ${region}`}</p>
+        <p>
+          Região:
+          {' '}
+          <Link to="/">
+            {region}
+          </Link>
+
+        </p>
         <p>{`Sub-região: ${subregion}`}</p>
         <p>{`População: ${population}`}</p>
         <ul>
