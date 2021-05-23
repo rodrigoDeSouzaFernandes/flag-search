@@ -14,9 +14,8 @@ const initialPages = {
   five: 5,
 };
 
-function PageNav({ currentPage, setCurrentPage }) {
+function PageNav({ currentPage, setCurrentPage, length, pageLimit }) {
   const [buttons, setButtons] = useState([]);
-
   const makeButtons = () => {
     const { one, two, three, four, five } = initialPages;
     if (currentPage <= initialPages.three) {
@@ -49,7 +48,7 @@ function PageNav({ currentPage, setCurrentPage }) {
             key={ index }
             className={ `btn-page ${Number(elem) === currentPage}` }
             type="button"
-            disabled={ Number(elem) === currentPage }
+            disabled={ Number(elem) > Math.ceil(length / pageLimit) }
             onClick={ handleClick }
           >
             {elem}
@@ -66,6 +65,8 @@ function PageNav({ currentPage, setCurrentPage }) {
 PageNav.propTypes = {
   currentPage: PropTypes.number.isRequired,
   setCurrentPage: PropTypes.func.isRequired,
+  length: PropTypes.number.isRequired,
+  pageLimit: PropTypes.number.isRequired,
 };
 
 export default PageNav;

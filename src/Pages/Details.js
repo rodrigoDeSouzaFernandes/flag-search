@@ -24,6 +24,9 @@ function Details({ match: { params: { name } } }) {
     getCountryDetails(name, setCountry, setPossibleBorders);
   }, [name]);
 
+  const borders = possibleBorders
+    .filter((elem) => country.borders.some((e) => e === elem.alpha3Code));
+
   return (
     <div>
       {country
@@ -36,8 +39,7 @@ function Details({ match: { params: { name } } }) {
                 <p className="borders-p">Países vizinhos:</p>
 
                 {
-                  possibleBorders
-                    .filter((elem) => country.borders.some((e) => e === elem.alpha3Code))
+                  borders
                     .map((c, index) => {
                       if (index < actualPage * pageLimit
                       && index >= actualPage * pageLimit - pageLimit) {
@@ -47,7 +49,12 @@ function Details({ match: { params: { name } } }) {
                     })
                 }
               </div>
-              <PageNav currentPage={ actualPage } setCurrentPage={ setActualPage } />
+              <PageNav
+                currentPage={ actualPage }
+                setCurrentPage={ setActualPage }
+                length={ borders.length }
+                pageLimit={ pageLimit }
+              />
             </div>
           </div>
         )

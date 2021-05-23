@@ -32,6 +32,10 @@
   filter: brightness(1.1);
 }
 
+.btn-page:disabled {
+  display: none;
+}
+
 .btn-page.true {
   background-color: var(--main-color);
   color: white;
