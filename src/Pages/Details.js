@@ -7,6 +7,7 @@ import getCountryDetails from '../Services/getCountryDetails';
 import DetailsCard from './components/DetailsCard';
 import ImageCard from './components/ImageCards';
 import flagContext from '../Context/flagContext';
+import PageNav from './components/PageNav';
 
 import '../Styles/Details.css';
 
@@ -32,8 +33,9 @@ function Details({ match: { params: { name } } }) {
             <Header />
             <div className="details">
               <DetailsCard country={ country } />
-              <p className="borders-p">Países vizinhos:</p>
               <div className="borders">
+                <p className="borders-p">Países vizinhos:</p>
+
                 {
                   possibleBorders
                     .filter((elem) => country.borders.some((e) => e === elem.alpha3Code))
@@ -46,6 +48,7 @@ function Details({ match: { params: { name } } }) {
                     })
                 }
               </div>
+              <PageNav currentPage={ actualPage } setCurrentPage={ setActualPage } />
             </div>
           </div>
         )
