@@ -1,0 +1,28 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.borders {
+  align-items: center;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.borders-p {
+  color: rgb(46, 46, 46);
+  font-size: 25px;
+  margin: 50px 0 10px;
+}
+
+.borders .image-card {
+  margin: 0;
+}
+

@@ -8,6 +8,7 @@ function Provider({ children }) {
   const [allCountries, setAllCountries] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const [pageLimit, setPageLimit] = useState(limitItens);
+  const [actualPage, setActualPage] = useState(1);
 
   const context = {
     allCountries,
@@ -16,6 +17,8 @@ function Provider({ children }) {
     setIsFetching,
     pageLimit,
     setPageLimit,
+    actualPage,
+    setActualPage,
   };
 
   return (

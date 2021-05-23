@@ -1,9 +1,13 @@
 import React from 'react';
 
-function detailsCard(country) {
+import PropTypes from 'prop-types';
+
+import '../../Styles/DetailsCard.css';
+
+function DetailsCard({ country }) {
   const { flag, name, population, region, subregion, capital, languages } = country;
   return (
-    <div>
+    <div className="details-card">
       <img src={ flag } alt={ `flag of ${name}` } />
       <div className="info">
         <p>{`Nome: ${name}`}</p>
@@ -11,15 +15,19 @@ function detailsCard(country) {
         <p>{`Região: ${region}`}</p>
         <p>{`Sub-região: ${subregion}`}</p>
         <p>{`População: ${population}`}</p>
-        <ol>
-          Línguas
+        <ul>
+          Língua(s):
           {languages.map(
             (language) => <li key={ language.iso639_1 }>{language.name}</li>,
           )}
-        </ol>
+        </ul>
       </div>
     </div>
   );
 }
 
-export default detailsCard;
+DetailsCard.propTypes = {
+  country: PropTypes.objectOf(PropTypes.any).isRequired,
+};
+
+export default DetailsCard;

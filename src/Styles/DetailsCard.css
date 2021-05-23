@@ -1,0 +1,32 @@
+.details-card {
+  align-items: center;
+  color: rgb(88, 88, 88);
+  display: flex;
+  margin-top: 5%;
+}
+
+.details-card img {
+  height: 17.2%;
+  max-height: 258px;
+  max-width: 443px;
+  min-height: 150px;
+  min-width: 316px;
+  width: 29.5%;
+}
+
+.details-card .info {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-around;
+  padding: 10px 20px;
+}
+
+.details-card .info ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.details-card .info ul li {
+  margin-left: 5px;
+}

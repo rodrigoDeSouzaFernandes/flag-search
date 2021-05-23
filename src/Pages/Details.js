@@ -1,15 +1,55 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
 
 import Header from './components/Header';
+import getCountryDetails from '../Services/getCountryDetails';
+import DetailsCard from './components/DetailsCard';
+import ImageCard from './components/ImageCards';
+import flagContext from '../Context/flagContext';
+
+import '../Styles/Details.css';
+
+const itensPerPage = 3;
 
 function Details({ match: { params: { name } } }) {
-  console.log(name);
+  const [country, setCountry] = useState();
+  const [possibleBorders, setPossibleBorders] = useState([]);
+
+  const { setPageLimit, actualPage, pageLimit, setActualPage } = useContext(flagContext);
+
+  useEffect(() => {
+    setActualPage(1);
+    setPageLimit(itensPerPage);
+    getCountryDetails(name, setCountry, setPossibleBorders);
+  }, []);
 
   return (
     <div>
-      <Header />
+      {country
+        ? (
+          <div>
+            <Header />
+            <div className="details">
+              <DetailsCard country={ country } />
+              <p className="borders-p">Países vizinhos:</p>
+              <div className="borders">
+                {
+                  possibleBorders
+                    .filter((elem) => country.borders.some((e) => e === elem.alpha3Code))
+                    .map((c, index) => {
+                      if (index < actualPage * pageLimit
+                      && index >= actualPage * pageLimit - pageLimit) {
+                        return <ImageCard country={ c } />;
+                      }
+                      return '';
+                    })
+                }
+              </div>
+            </div>
+          </div>
+        )
+        : 'loading'}
     </div>
   );
 }

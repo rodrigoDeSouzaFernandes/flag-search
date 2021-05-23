@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import flagContext from '../../Context/flagContext';
 
 import { getAllCountries } from '../../Services/api-request';
@@ -11,8 +11,8 @@ import '../../Styles/Main.css';
 import Filter from './Filter';
 
 function Main() {
-  const [actualPage, setActualPage] = useState(1);
-  const { allCountries, setAllCountries, pageLimit } = useContext(flagContext);
+  const { allCountries, setAllCountries, pageLimit,
+    actualPage, setActualPage } = useContext(flagContext);
 
   useEffect(() => {
     getAllCountries(setAllCountries);
