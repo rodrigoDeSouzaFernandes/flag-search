@@ -20,9 +20,13 @@
   width: 100%;
 }
 
+.borders a {
+  width: 30%;
+}
+
 .borders .image-card {
   margin: 0;
-  width: 30%;
+  width: 100%;
 }
 
 @media screen and ( max-width : 1060px ) {
@@ -33,7 +37,7 @@
     width: 95%;
   }
 
-  .borders .image-card {
+  .borders a {
     margin: 10px;
     min-width: 300px;
     width: 80%;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
@@ -8,7 +9,9 @@ function ImageCard({ country }) {
   const { flag, name } = country;
 
   return (
-    <img className="image-card" src={ flag } alt={ `flag of ${name}` } />
+    <Link to={ `/details/${name}` }>
+      <img className="image-card" src={ flag } alt={ `flag of ${name}` } />
+    </Link>
   );
 }
 

@@ -16,7 +16,6 @@ const itensPerPage = 3;
 function Details({ match: { params: { name } } }) {
   const [country, setCountry] = useState();
   const [possibleBorders, setPossibleBorders] = useState([]);
-
   const { setPageLimit, actualPage, pageLimit, setActualPage } = useContext(flagContext);
 
   useEffect(() => {
@@ -42,7 +41,7 @@ function Details({ match: { params: { name } } }) {
                     .map((c, index) => {
                       if (index < actualPage * pageLimit
                       && index >= actualPage * pageLimit - pageLimit) {
-                        return <ImageCard country={ c } />;
+                        return <ImageCard key={ c } country={ c } />;
                       }
                       return '';
                     })
