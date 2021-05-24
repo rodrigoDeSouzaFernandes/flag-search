@@ -14,7 +14,7 @@ import '../../Styles/Filter.css';
 function Filter() {
   const filterOptions = ['Região', 'Capital', 'Língua', 'País', 'Código de ligação'];
 
-  const { setAllCountries, setPageLimit } = useContext(flagContext);
+  const { setAllCountries, setPageLimit, setActualPage } = useContext(flagContext);
 
   const [subFilter, setSubfilter] = useState([]);
   const [selectFilter, setSelectFilter] = useState('none');
@@ -34,6 +34,7 @@ function Filter() {
   };
 
   const applyFilter = () => {
+    setActualPage(1);
     if (selectFilter === 'none' || actualFilter === 'none') {
       return alert('Você precisa selecionar um filtro');
     }

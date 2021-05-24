@@ -15,6 +15,7 @@ function Main() {
     actualPage, setActualPage, actualPath } = useContext(flagContext);
 
   useEffect(() => {
+    setActualPage(1);
     if (actualPath !== 'details') {
       getAllCountries(setAllCountries);
     }

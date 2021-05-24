@@ -9,6 +9,7 @@
 }
 
 .details-card img {
+  border: 1px solid;
   height: 17.2%;
   max-height: 258px;
   max-width: 443px;
