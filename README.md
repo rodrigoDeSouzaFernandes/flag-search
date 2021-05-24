@@ -1,5 +1,7 @@
 # Teste Mova Front end
 
+![flagsearch](https://user-images.githubusercontent.com/72228436/119375389-214e6e00-bc91-11eb-91e1-0203b7e07657.jpeg)
+
 A atividade proposta é de criar um projeto integrado com a api (https://restcountries.eu/#api-endpoints-code) que lista países.
 
 ## Funcionalidades:
